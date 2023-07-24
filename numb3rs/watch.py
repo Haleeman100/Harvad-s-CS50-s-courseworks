@@ -15,11 +15,13 @@ def main():
     print(r)
 
 def parse(s):
-    iframe_pattern = r'<iframe[^>]*src="https?://(?:www\.)?youtube\.com/embed/([^"]*)"[^>]*>'
-    matches = re.search(iframe_pattern, s, re.IGNORECASE)
+    #checks from the beginni9ng of charcter matching it to src by specifically stating to not capture [^>]* 
+    youtube_pattern = r'<iframe[^>]*src="https?://(?:www\.)?youtube\.com/embed/([^"]*)"[^>]*>'
+    matches = re.search(youtube_pattern, s, re.IGNORECASE)
     if matches:
         capture = matches.group(1)
         #youtu_be_url = re.sub(r'www\.youtube\.com/', 'https://youtu.be/', youtube_code)
+        # as a form of fstring to concatanate the captured bit of youtube_pattern with https://youtu.be/  
         short_url = f"https://youtu.be/{capture}"
         return short_url
     else:
