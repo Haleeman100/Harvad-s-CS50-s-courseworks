@@ -5,16 +5,12 @@ class ListWords:
         self.list_word = ["Zero","One", "Two", "Three", "Four", "Five", "Six", "Seven",
                       "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen",
                       "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty",
-                      "Thirty", "Fourty", "Fifty", "Sisty", "Seventy", "Eighty", "Ninety",  ]
+                      "Thirty", "Fourty", "Fifty", "Sisty", "Seventy", "Eighty", "Ninety", "Hundred",
+                      "Thousand", "Million", "Billion"]
     
     def get_words(self, num):
-        if num in self.list_word:
-            return self.list_word[num]
+
         
-        elif 0 <= num <= 20:
-            return self.list_word[num]
-        
-        elif 20 <= num <= 99:
             
             ...
 ...
