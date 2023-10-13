@@ -3,11 +3,11 @@ import inflect
 
 class Convert:
     def __init__(self):
-        self.call = inflect.engine()
+        self.p = inflect.engine()
         
     def convert_number(self, number):
         if number >= 0:
-            words = self.call.number_to_words(number, andword="")
+            words = self.p.number_to_words(number, andword="")
             return words
         
         else:
