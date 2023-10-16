@@ -10,7 +10,7 @@ class Convert:
     def convert_number(self, number):
        if number >= 0:
             if number < 10**12:
-                words = self.p.number_to_words(number, andword="")
+                words = self.p.number_to_words(number, andword="").capitalize()
                 return words
             else:
                 return "Number is too large to convert"
