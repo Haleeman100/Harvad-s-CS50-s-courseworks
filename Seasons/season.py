@@ -19,7 +19,7 @@ class Convert:
         
 class DateToAge:
     def __init__(self):
-        self.convert_number = Convert()
+        self.call_convert_number = Convert()
         
     def convert_date_to_age(Self, str): 
        # date_format = "%Y-%m-%d"
@@ -34,7 +34,7 @@ class DateToAge:
             sys.exit("Invalid date format")
         
         get_age_in_minutes = self.convert_date_to_age(str)
-        age_words = self.convert_number.convert_number(get_age_in_minutes)
+        age_words = self.call_convert_number.convert_number(get_age_in_minutes)
         return age_words
     
     def check_format(self, str):
