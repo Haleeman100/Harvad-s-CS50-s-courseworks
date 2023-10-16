@@ -51,12 +51,17 @@ class DateToAge:
 dob = input("Enter your date of birth (YYYY-MM-DD): ")
 
 #date_to_age_converter = DateToAge()
-           
-            
-if __name__ == "__main__":
+
+def main():
     date_to_age_converter = DateToAge()
     age_converter_to_words = date_to_age_converter.convert_age_to_number(dob)
     print(age_converter_to_words)
+    
+           
+            
+if __name__ == "__main__":
+    main()
+    
 
 
     
