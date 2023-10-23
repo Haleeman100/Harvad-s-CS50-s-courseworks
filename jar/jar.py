@@ -19,9 +19,12 @@ class Jar:
         if n > self.capacity or n + self.size > self.capacity:
             raise ValueError("Number of cookies should not be higher than that of capacoty ")
         
+        self.size += n
+        
         ...
 
     def withdraw(self, n):
+        
         ...
 
     @property
