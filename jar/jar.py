@@ -1,17 +1,15 @@
 class Jar:
     # checks to see if capacity is not positive integer, raises an exception if that's rthe case
-    def __init__(self, size, capacity = 12):
+    def __init__(self, capacity = 12):
         if not isinstance(capacity, int) or capacity < 0:
-            raise ValueError("Capacity should be a non-negative integer")   
-        self.size = 0    
-        self.capacity = capacity
-      
+            raise ValueError("Capacity should be a non-negative integer")     
+        self._capacity = capacity
+        self._size = 0      
         
-        ...
 
     def __str__(self):
         # returns a string of cookies in the jar
-        return "🍪" * self.size       
+        return "🍪" * self._size       
         ...
 
     def deposit(self, n):
@@ -19,7 +17,7 @@ class Jar:
         if  self.size + n > self.capacity:
             raise ValueError("Number of cookies should not be higher than that of capacity")
         
-        self.size += n
+        self._size += n
         
         ...
 
@@ -28,22 +26,25 @@ class Jar:
         if n > self.size:
             raise ValueError("Number of cookies to be withdrawn should not be greater than Jar size")   
              
-        self.size -= n
+        self._size -= n
         
         ...
 
-    # @property
-    # def capacity(self):
-    #     ...
+    @property
+    def capacity(self):
+        return self._capacity
+        
 
-    # @property
-    # def size(self):
-    #     ...
+    @property
+    def size(self):
+        return self._size
+        
         
 def main():
     jar = Jar(5)
-    jar.deposit(5)
-    jar.withdraw(5)
+    jar.deposit(3)
+    print(jar.size)
+    print(jar.capacity)
     print(jar)
     
         
