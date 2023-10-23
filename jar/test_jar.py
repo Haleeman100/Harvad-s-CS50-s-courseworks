@@ -14,6 +14,11 @@ def test_invalid_deposit(check_all):
     check_all.deposit = 5
     with pytest.raises(ValueError):
         Jar(check_all) == 3
+        
+def test_invalid_withdraw(check_all):
+    check_all.deposit == 4
+    with pytest.raises(ValueError):
+        check_all.withdraw(5)
 
 def test_withdraw(check_all):
     check_all.deposit(3)
