@@ -28,3 +28,11 @@ def test_withdraw(check_all):
 def test_valid_str(check_all):
     check_all.deposit(3)
     assert str(check_all) == "🍪🍪🍪"
+    
+def test_capacity(check_all):
+    check_all == Jar(11)
+    check_all.capacity
+
+def test_size(check_all):
+    check_all.deposit(2)
+    assert check_all.size == 2
