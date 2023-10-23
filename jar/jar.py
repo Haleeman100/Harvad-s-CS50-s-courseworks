@@ -16,14 +16,19 @@ class Jar:
 
     def deposit(self, n):
         # deposit's cookies to jar
-        if n > self.capacity or n + self.size > self.capacity:
-            raise ValueError("Number of cookies should not be higher than that of capacoty ")
+        if n + self.size > self.capacity:
+            raise ValueError("Number of cookies should not be higher than that of capacity")
         
         self.size += n
         
         ...
 
     def withdraw(self, n):
+        # withdraw cookies from jar
+        if n > self.size:
+            raise ValueError("Number of cookies to be withdrawn should not be greater than Jar size")   
+             
+        self.size -= n
         
         ...
 
